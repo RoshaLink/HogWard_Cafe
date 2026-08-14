@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cinzel+Decorative:wght@700&family=MedievalSharp&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-cinzel: 'Cinzel', serif;
+  --font-decorative: 'Cinzel Decorative', serif;
+  --font-medieval: 'MedievalSharp', cursive;
+  
+  --gold-primary: #e6c587;
+  --gold-light: #fff2d0;
+  --gold-bright: #ffd700;
+  --gold-dark: #a67c37;
+  --gold-shadow: #3b280b;
+
+  --stone-dark: #121820;
+  --stone-mid: #1c2533;
+  --stone-light: #283344;
+  --stone-border: #3b495e;
+  
+  --parchment-bg: #e6d3b4;
+  --gem-cyan: #00d9ff;
+  --gem-glow: rgba(0, 217, 255, 0.6);
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-cinzel);
+  background-color: #0b0e14;
+  color: #332211;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling for fantasy vibe */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121820;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a67c37;
+  border-radius: 5px;
+  border: 2px solid #121820;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6c587;
+}
