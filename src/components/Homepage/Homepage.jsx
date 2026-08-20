@@ -6,6 +6,21 @@ import cafeImg1 from '../../assets/insid-caffe/Coffee_shop_interior_with_books_2
 import cafeImg2 from '../../assets/insid-caffe/Coffee_shop_interior_with_books_202608051250 (1).jpeg';
 import cafeImg3 from '../../assets/insid-caffe/Coffee_shop_interior_with_books_202608051250 (2).jpeg';
 import cafeImg4 from '../../assets/insid-caffe/Coffee_shop_interior_with_books_202608051250 (3).jpeg';
+
+// Menu Media Imports from Menu_video
+import butterscotchVid from '../../assets/Menu_video/Butterscotch Brew.mp4';
+import phoenixLatteVid from '../../assets/Menu_video/Phoenix Ember Latte.mp4';
+import moonbeamTeaVid from '../../assets/Menu_video/Moonbeam Tea.mp4';
+
+import spellcastersChaiImg from "../../assets/Menu_video/Spellcaster's Chai.jpeg";
+import whisperingWillowImg from '../../assets/Menu_video/Whispering Willow Juice.jpeg';
+import goldenSnitchImg from '../../assets/Menu_video/Golden Snitch Scone.jpeg';
+import dragonsEggImg from "../../assets/Menu_video/Dragon's Egg Tart.jpeg";
+import starlightMacaronImg from '../../assets/Menu_video/Starlight Macaron.jpeg';
+import gildedGriffinImg from '../../assets/Menu_video/Gilded Griffin Cake.jpeg';
+import elderflowerCheesecakeImg from '../../assets/Menu_video/Elderflower Cheesecake.jpeg';
+import wandWaveCookiesImg from '../../assets/Menu_video/Wand-Wave Cookies.jpeg';
+
 import './Homepage.css';
 
 const interiorImages = [
@@ -23,7 +38,9 @@ const menuData = [
     price: '12 Galleons',
     desc: 'Steaming mug with golden foam, magical caramel aroma & butterscotch magic',
     icon: '🍺',
-    badge: 'POPULAR'
+    badge: 'POPULAR',
+    mediaType: 'video',
+    mediaSrc: butterscotchVid
   },
   {
     id: 'b2',
@@ -32,7 +49,9 @@ const menuData = [
     price: '15 Galleons',
     desc: 'Fiery espresso mug infused with phoenix feather spice & glowing cinnamon',
     icon: '🔥',
-    badge: 'HOUSE SPECIAL'
+    badge: 'HOUSE SPECIAL',
+    mediaType: 'video',
+    mediaSrc: phoenixLatteVid
   },
   {
     id: 'b3',
@@ -41,16 +60,20 @@ const menuData = [
     price: '10 Galleons',
     desc: 'Glowing celestial blue tea brewed with shimmering star swirls',
     icon: '🌙',
-    badge: 'MAGICAL'
+    badge: 'MAGICAL',
+    mediaType: 'video',
+    mediaSrc: moonbeamTeaVid
   },
   {
     id: 'b4',
     category: 'brews',
-    name: 'Spellcaster\'s Chai',
+    name: "Spellcaster's Chai",
     price: '14 Galleons',
     desc: 'Spiced potion chai served from a self-stirring copper teapot',
     icon: '🫖',
-    badge: ''
+    badge: 'SPICED POTION',
+    mediaType: 'image',
+    mediaSrc: spellcastersChaiImg
   },
   {
     id: 'b5',
@@ -59,7 +82,9 @@ const menuData = [
     price: '11 Galleons',
     desc: 'Refreshing elixir harvested from enchanted grove willow blossoms',
     icon: '🧪',
-    badge: 'FRESH'
+    badge: 'FRESH',
+    mediaType: 'image',
+    mediaSrc: whisperingWillowImg
   },
   {
     id: 'p1',
@@ -68,16 +93,20 @@ const menuData = [
     price: '9 Galleons',
     desc: 'Winged golden scone with honey sparkles & cosmic sugar dusting',
     icon: '🧹',
-    badge: 'FAVORITE'
+    badge: 'FAVORITE',
+    mediaType: 'image',
+    mediaSrc: goldenSnitchImg
   },
   {
     id: 'p2',
     category: 'pastries',
-    name: 'Dragon\'s Egg Tart',
+    name: "Dragon's Egg Tart",
     price: '11 Galleons',
     desc: 'Glowing scaled tart filled with passionfruit & dragonfruit custard',
     icon: '🥚',
-    badge: 'SPICY SWEET'
+    badge: 'SPICY SWEET',
+    mediaType: 'image',
+    mediaSrc: dragonsEggImg
   },
   {
     id: 'p3',
@@ -86,7 +115,9 @@ const menuData = [
     price: '13 Galleons',
     desc: 'Trio of color-shifting glowing macarons infused with star dust',
     icon: '✨',
-    badge: 'NEW'
+    badge: 'NEW',
+    mediaType: 'image',
+    mediaSrc: starlightMacaronImg
   },
   {
     id: 'p4',
@@ -95,7 +126,9 @@ const menuData = [
     price: '16 Galleons',
     desc: 'Rich dark chocolate cake crowned with edible gold griffin figure',
     icon: '🦅',
-    badge: 'DELUXE'
+    badge: 'DELUXE',
+    mediaType: 'image',
+    mediaSrc: gildedGriffinImg
   },
   {
     id: 'p5',
@@ -104,7 +137,9 @@ const menuData = [
     price: '14 Galleons',
     desc: 'Creamy elderberry slice dusted with enchanted white flowers',
     icon: '🌸',
-    badge: ''
+    badge: 'FLORAL MAGIC',
+    mediaType: 'image',
+    mediaSrc: elderflowerCheesecakeImg
   },
   {
     id: 'm1',
@@ -113,7 +148,9 @@ const menuData = [
     price: '8 Galleons',
     desc: 'Celestial star & crescent moon butter cookies with sparkling sugar',
     icon: '⭐',
-    badge: 'SNACK'
+    badge: 'SNACK',
+    mediaType: 'image',
+    mediaSrc: wandWaveCookiesImg
   }
 ];
 
@@ -338,11 +375,42 @@ const Homepage = ({ viewMode }) => {
         ) : (
           <div className="interactive-menu-grid">
             {filteredMenuItems.map((item) => (
-              <div key={item.id} className="menu-item-card">
-                <div className="card-top-row">
-                  <span className="card-item-icon">{item.icon}</span>
-                  {item.badge && <span className="card-badge">{item.badge}</span>}
-                </div>
+              <div key={item.id} className={`menu-item-card ${item.mediaType === 'video' ? 'has-video-card' : 'has-image-card'}`}>
+                {item.badge && (
+                  <div className="card-top-row">
+                    <span className="card-badge">{item.badge}</span>
+                  </div>
+                )}
+
+                {item.mediaSrc && (
+                  <div className={`card-media-wrapper ${item.mediaType === 'video' ? 'is-video' : 'is-image'}`}>
+                    {item.mediaType === 'video' ? (
+                      <>
+                        <video
+                          src={item.mediaSrc}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="card-media-video"
+                        />
+                        <span className="media-badge video-badge">
+                          <Play size={9} fill="#ffd700" color="#ffd700" /> ENCHANTED VIDEO
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <img
+                          src={item.mediaSrc}
+                          alt={item.name}
+                          className="card-media-img animated-magical-img"
+                        />
+                        <div className="magic-shimmer-overlay"></div>
+                      </>
+                    )}
+                  </div>
+                )}
+
                 <h3 className="card-item-name">{item.name}</h3>
                 <p className="card-item-desc">{item.desc}</p>
                 <div className="card-bottom-row">
