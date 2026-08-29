@@ -41,6 +41,16 @@ const Navbar = ({ viewMode, onToggleViewMode }) => {
 
       {/* Main Wood & Gold Navigation Bar */}
       <nav className="fantasy-nav-bar">
+        {/* Mobile Header View Mode Toggle Button (Visible only on mobile/tablet screens <960px) */}
+        <button
+          className={`mobile-header-view-toggle ${viewMode === 'photo' ? 'active-photo' : ''}`}
+          onClick={onToggleViewMode}
+          title={viewMode === 'video' ? t('btnViewPhoto') : t('btnViewVideo')}
+          aria-label="Toggle View Mode"
+        >
+          {viewMode === 'video' ? <Camera size={18} /> : <Video size={18} />}
+        </button>
+
         {/* Left Navigation Section */}
         <div className="nav-group nav-left">
           {/* View Mode Toggle Button (Left of Navbar) */}

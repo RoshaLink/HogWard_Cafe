@@ -122,3 +122,21 @@
   }
 }
 
+@media (max-width: 360px), (max-height: 400px) {
+  .fantasy-frame-wrapper {
+    padding: 2px;
+  }
+  .frame-border-corner {
+    width: 24px;
+    height: 24px;
+  }
+  .glowing-gem {
+    width: 5px;
+    height: 5px;
+  }
+  .top-left .glowing-gem { top: 6px; left: 6px; }
+  .top-right .glowing-gem { top: 6px; right: 6px; }
+  .bottom-left .glowing-gem { bottom: 6px; left: 6px; }
+  .bottom-right .glowing-gem { bottom: 6px; right: 6px; }
+}
+

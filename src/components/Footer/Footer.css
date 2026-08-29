@@ -243,3 +243,39 @@
     font-size: 11px;
   }
 }
+
+@media (max-width: 360px), (max-height: 400px) {
+  .footer-stone-body {
+    padding: 10px 8px;
+  }
+  .arch-title {
+    font-size: 10px;
+  }
+  .arch-sub {
+    font-size: 9px;
+  }
+  .stone-pillar {
+    height: 16px;
+    width: 6px;
+  }
+  .col-title {
+    font-size: 10px;
+  }
+  .col-text {
+    font-size: 10px;
+  }
+  .social-scroll-box {
+    width: 30px;
+    height: 30px;
+  }
+  .social-icon {
+    width: 14px;
+    height: 14px;
+  }
+  .footer-nav-links a {
+    font-size: 10px;
+  }
+  .copyright-text {
+    font-size: 9px;
+  }
+}
