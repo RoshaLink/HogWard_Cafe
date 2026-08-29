@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Castle, Beer, Scroll, Feather, Send, Sparkles, Globe, ChevronDown, Calendar, Menu, X, Camera, Video } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
+import logoImg from '../../assets/logo.png';
 import './Navbar.css';
 
 // Cauldron SVG icon for Kitchen
@@ -104,7 +105,7 @@ const Navbar = ({ viewMode, onToggleViewMode }) => {
         {/* Center Round Hogward Cafe Logo Badge Header */}
         <div className="nav-center-emblem">
           <div className="hogward-logo-ring">
-            <img src="/assets/logo.png" alt="Hogward Cafe Emblem" className="hogward-badge-logo-img" />
+            <img src={logoImg} alt="Hogward Cafe Emblem" className="hogward-badge-logo-img" />
           </div>
         </div>
 

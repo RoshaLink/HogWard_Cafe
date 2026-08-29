@@ -20,6 +20,7 @@ import starlightMacaronImg from '../../assets/Menu_video/Starlight Macaron.jpeg'
 import gildedGriffinImg from '../../assets/Menu_video/Gilded Griffin Cake.jpeg';
 import elderflowerCheesecakeImg from '../../assets/Menu_video/Elderflower Cheesecake.jpeg';
 import wandWaveCookiesImg from '../../assets/Menu_video/Wand-Wave Cookies.jpeg';
+import menuBoardImg from '../../assets/menu-board.jpg';
 
 import './Homepage.css';
 
@@ -244,7 +245,6 @@ const Homepage = ({ viewMode }) => {
             playsInline
           >
             <source src={heroVideo} type="video/mp4" />
-            <source src="/assets/Hero-video.mp4" type="video/mp4" />
             Your browser does not support video playback.
           </video>
         )}
@@ -366,7 +366,7 @@ const Homepage = ({ viewMode }) => {
           <div className="menu-image-container">
             <div className="menu-image-frame">
               <img
-                src="/assets/menu-board.jpg"
+                src={menuBoardImg}
                 alt="Hogward's Magic Cafe Menu Board"
                 className="menu-board-img"
               />
